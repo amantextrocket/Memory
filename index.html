@@ -1,1 +1,56 @@
-<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b0d12"><title>MEMORY — Mobile Shop Management</title><link rel="stylesheet" href="style.css"></head><body><div id="login" class="login"><div class="login-card"><div class="logo">M</div><div class="eyebrow">MEMORY</div><h1>Mobile Shop Management</h1><p>अपनी दुकान का पूरा daily work एक जगह manage करें।</p><input id="shopId" placeholder="Shop ID"><input id="pin" type="password" inputmode="numeric" maxlength="6" placeholder="Password / PIN"><button class="primary wide" onclick="login()">LOGIN</button><small>Demo: MEMORY001 / 1234</small></div></div><div id="app" class="hidden"><aside id="side"><div class="brand"><b>M</b><span><strong>MEMORY</strong><small>Mobile Shop Management</small></span></div><nav id="nav"></nav><div class="side-bottom">● Shop Active<small id="shopLabel">MEMORY001</small></div></aside><main><header><button id="menu" class="circle">☰</button><div><span class="eyebrow">MEMORY WORKSPACE</span><h2 id="title">Dashboard</h2></div><div><button class="circle" id="theme">◐</button><button class="user">AM</button></div></header><section id="view"></section></main></div><div id="toast"></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MEMORY</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="login" class="login-screen">
+  <div class="login-box">
+    <div class="mark">M</div>
+    <span class="eyebrow">MEMORY</span>
+    <h1>Mobile Shop Management</h1>
+    <p>अपने account से sign in करें</p>
+    <select id="role">
+      <option value="super">Super Admin</option>
+      <option value="shop">Shop Admin</option>
+      <option value="staff">Staff</option>
+    </select>
+    <input id="loginId" placeholder="Login ID">
+    <input id="pin" type="password" inputmode="numeric" maxlength="6" placeholder="Password / PIN">
+    <button class="primary wide" onclick="login()">LOGIN</button>
+    <small>Demo: SUPER001 / 2580 · SHOP001 / 1234 · STAFF001 / 1111</small>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <aside id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      <div><b>MEMORY</b><small id="brandSub">Platform Control</small></div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="account">
+      <span class="online"></span><b id="accountName">Account</b>
+      <small id="accountId"></small>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <button class="menu" onclick="toggleSidebar()">☰</button>
+      <div><span class="eyebrow">MEMORY</span><h2 id="pageTitle">Dashboard</h2></div>
+      <div class="head-actions">
+        <button class="circle" onclick="toggleTheme()">◐</button>
+        <button class="avatar" id="avatar">A</button>
+      </div>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
