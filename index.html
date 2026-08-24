@@ -1,4 +1,72 @@
-<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MEMORY</title><link rel="stylesheet" href="style.css"></head><body>
-<div id="login" class="login-screen"><div class="login-box"><div class="mark">M</div><span class="eyebrow">MEMORY</span><h1>Mobile Shop Management</h1><p>Shop Admin में प्रवेश करें</p><input id="loginId" placeholder="Shop Admin ID"><input id="pin" type="password" inputmode="numeric" placeholder="Password / PIN"><button class="primary wide" onclick="shopLogin()">LOGIN</button><small>Demo: SHOP001 / 1234</small></div></div>
-<div id="app" class="hidden"><aside id="sidebar"><div class="brand"><div class="brand-mark">M</div><div><b>MEMORY</b><small>Shop Admin</small></div></div><nav id="nav"></nav><div class="account"><span class="online"></span><b>Shop Admin</b><small>SHOP001</small></div></aside><main><header><button class="menu" onclick="toggleSidebar()">☰</button><div><span class="eyebrow">MEMORY</span><h2 id="pageTitle">Dashboard</h2></div><div class="head-actions"><button class="circle" onclick="toggleTheme()">◐</button><button class="avatar">SA</button></div></header><section id="content"></section></main></div>
-<div id="superadmin" class="hidden"></div><div id="toast"></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MEMORY</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast"></div>
+
+<!-- SHOP ADMIN -->
+<div id="shopLogin" class="screen">
+  <div class="login-card">
+    <div class="logo">M</div>
+    <div class="eyebrow">MEMORY</div>
+    <h1 id="loginTitle">Shop Admin</h1>
+    <p id="loginSubtitle">Mobile shop management workspace</p>
+    <input id="shopId" placeholder="Shop Admin ID">
+    <input id="shopPin" type="password" inputmode="numeric" placeholder="Password / PIN">
+    <button class="primary full" onclick="shopLogin()">Login</button>
+    <small>Demo: SHOP001 / 1234</small>
+  </div>
+</div>
+
+<div id="shopApp" class="hidden">
+  <aside id="sidebar">
+    <div class="brand"><div class="brand-logo">M</div><div><b>MEMORY</b><small id="shopNameSide">Shop Admin</small></div></div>
+    <nav id="shopNav"></nav>
+    <div class="userbox"><b id="shopUserName">Shop Admin</b><small id="shopUserId">SHOP001</small></div>
+  </aside>
+  <main>
+    <header>
+      <div class="head-left"><button class="menu" onclick="toggleSidebar()">☰</button><div><span class="eyebrow">MEMORY</span><h2 id="shopPageTitle">Dashboard</h2></div></div>
+      <div class="head-actions"><button class="icon-btn" onclick="toggleTheme()">◐</button><button class="avatar">SA</button></div>
+    </header>
+    <section id="shopContent"></section>
+  </main>
+</div>
+
+<!-- SUPER ADMIN -->
+<div id="superLogin" class="screen hidden">
+  <div class="login-card">
+    <div class="logo">M</div>
+    <div class="eyebrow">MEMORY · PRIVATE</div>
+    <h1>Super Admin</h1>
+    <p>Owner control center</p>
+    <input id="superId" placeholder="Super Admin ID">
+    <input id="superPin" type="password" inputmode="numeric" placeholder="Password / PIN">
+    <button class="primary full" onclick="superLogin()">Login</button>
+    <small>Demo: SUPER001 / 2580</small>
+  </div>
+</div>
+
+<div id="superApp" class="hidden">
+  <aside id="superSidebar">
+    <div class="brand"><div class="brand-logo">M</div><div><b>MEMORY</b><small>Super Admin</small></div></div>
+    <nav id="superNav"></nav>
+    <div class="userbox"><b>Super Admin</b><small>SUPER001</small></div>
+  </aside>
+  <main>
+    <header>
+      <div class="head-left"><button class="menu super-menu" onclick="toggleSuperSidebar()">☰</button><div><span class="eyebrow">MEMORY · SUPER ADMIN</span><h2 id="superPageTitle">Dashboard</h2></div></div>
+      <div class="head-actions"><button class="icon-btn" onclick="toggleTheme()">◐</button><button class="avatar">SA</button></div>
+    </header>
+    <section id="superContent"></section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
