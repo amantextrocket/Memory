@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MEMORY — Super Admin</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast"></div>
+<div id="login" class="screen">
+ <div class="login-card"><div class="logo">M</div><span class="eyebrow">MEMORY · PRIVATE</span>
+ <h1>Super Admin</h1><p>Owner Control Center</p>
+ <input id="superId" placeholder="Super Admin ID"><input id="superPin" type="password" placeholder="Password / PIN">
+ <button class="primary full" onclick="superLogin()">Login</button><small>Demo: SUPER001 / 2580</small>
+ <a class="owner-link" href="index.html">← Shop Admin</a></div>
+</div>
+<div id="app" class="hidden">
+ <aside id="sidebar"><div class="brand"><div class="brand-logo">M</div><div><b>MEMORY</b><small>Super Admin</small></div></div><nav id="nav"></nav><div class="userbox"><b>Super Admin</b><small>SUPER001</small></div></aside>
+ <main><header><div class="head-left"><button class="menu" onclick="toggleSide()">☰</button><div><span class="eyebrow">MEMORY · SUPER ADMIN</span><h2 id="title">Dashboard</h2></div></div><div class="head-actions"><button class="icon-btn" onclick="theme()">◐</button><button class="avatar">SA</button></div></header><section id="content"></section></main>
+</div>
+<script src="script.js"></script>
+</body></html>
